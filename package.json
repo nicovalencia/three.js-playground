@@ -1,0 +1,22 @@
+{
+  "name": "three.js-playground",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nicovalencia/three.js-playground.git"
+  },
+  "author": "Nico Valencia",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/nicovalencia/three.js-playground/issues"
+  },
+  "dependencies": {
+    "connect": "~2.12.0"
+  },
+  "devDependencies": {}
+}
