@@ -16,7 +16,7 @@
     "url": "https://github.com/nicovalencia/three.js-playground/issues"
   },
   "dependencies": {
-    "connect": "~2.12.0"
+    "express": "~3.4.7"
   },
   "devDependencies": {}
 }

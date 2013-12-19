@@ -21,27 +21,31 @@
     require(['main']);
   </script>
 
-  <style>
-    html, body, #canvas {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-    }
-
-    h1 {
-      color: #0099ff;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-  </style>
+  <link href="css/main.css" media="all" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
 
   <div id="canvas"></div>
 
-  <h1>Three.js Playground</h1>
+  <section id="sidebar">
+    <h1>Three.js Playground</h1>
+
+    <a href="/" class="backToMenu">Back to Menu</a>
+
+    <ul class="menu">
+      <li><a href="/introduction">Introduction</a></li>
+    </ul>
+
+    <article class="introduction">
+      <h2>Introduction</h2>
+      <p>Welcome to my Three.js playground!</p>
+      <p>Let's cover a quick introduction of how this playground works, then we can look at the basics of Three.js:</p>
+      <h3>Code / Project Structure</h3>
+      <p>Each example from the previous menu lives in <em>public/scripts/examples</em> and is loaded as a module using <a href="http://requirejs.org">RequireJS</a>. The core setup and rendering code is initialized in <em>public/scripts/main.js</em> and passed to each example's constructor. I'd encourage you to open up these parts in your editor so you can take a peek at what's going on as we step through each part of Three.js.</p>
+      <p class="warning">NOTE: The goal of this project is to provide a Three.js playground with examples of each piece of functionality that makes learning and understanding the library as easy as possible. This hack-job of a sandbox is atypical of any and all best practices; however, I've structured it in a way that makes viewing Three.js examples in isolation easy and clear as possible. Reccomendations and contributions are welcome on <a href="http://github.com/nicovalencia/three.js-playground" target="_BLANK">GitHub</a>.</p>
+    </article>
+  </section>
 
 </body>
 </html>

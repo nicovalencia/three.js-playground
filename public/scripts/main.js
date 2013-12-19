@@ -1,20 +1,18 @@
 require([
 
   'jquery',
-  'THREE',
+  'THREE'
 
-  'examples/basic'
-
-], function($, THREE, ExBasic) {
+], function($, THREE) {
 
   // TODO: add documentation to basic scene setup.
-  function App() {
+  function App(Example) {
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     // TODO: update renderer size on window resize
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(window.innerWidth * 0.7, window.innerHeight);
 
     // TODO: update camera ratio on window resize
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth * 0.7 / window.innerHeight, 0.1, 1000);
     this.camera.position.z = 5;
 
     this.clock = new THREE.Clock();
@@ -24,14 +22,10 @@ require([
 
     $('#canvas').append(this.renderer.domElement);
 
-    this.loadExample();
+    this.example = new Example(this);
+
     this.render();
   }
-
-  // TODO: drive module loading on menu selection.
-  App.prototype.loadExample = function() {
-    this.example = new ExBasic(this);
-  };
 
   App.prototype.render = function() {
     var _this = this;
@@ -46,7 +40,15 @@ require([
   };
 
   $(document).ready(function() {
-    window.app = new App();
+    var example = window.location.pathname.slice(1);
+    if (example) {
+      require(['examples/'+example], function(Example) {
+        window.app = new App(Example);
+        $('ul.menu').fadeOut(function() {
+          $('.backToMenu, #sidebar article.'+example).fadeIn();
+        });
+      });
+    }
   });
 
 });
